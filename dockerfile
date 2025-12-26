@@ -1,16 +1,16 @@
-# 1. Use official Tomcat image
+# 1. Use the official Tomcat image
 FROM tomcat:9.0
 
-# 2. Set working directory to the Tomcat webapps folder
+# 2. Set the working directory to the Tomcat webapps folder
 WORKDIR /usr/local/tomcat/webapps/
 
-# 3. Remove default ROOT webapp (optional)
+# 3. Remove the default ROOT webapp (optional)
 RUN rm -rf ROOT
 
-# 4. Copy your WAR file from pet_shop/target/ into Tomcat
+# 4. Copy your WAR file from target/ into Tomcat
 COPY target/*.war /usr/local/tomcat/webapps/ROOT.war
 
-# 5. Expose port
+# 5. Expose the port
 EXPOSE 8080
 
 # 6. Start Tomcat
